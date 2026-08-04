@@ -104,4 +104,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cards.forEach(card => cardObserver.observe(card));
 
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+    // Fungsi Buka Sidebar
+    function openSidebar(e) {
+        if (e) e.preventDefault();
+        navMenu.classList.add('show');
+        sidebarOverlay.classList.add('show');
+        document.body.classList.add('sidebar-open'); // Mengunci scroll body
+    }
+
+    // Fungsi Tutup Sidebar
+    function closeSidebar(e) {
+        if (e) e.preventDefault();
+        navMenu.classList.remove('show');
+        sidebarOverlay.classList.remove('show');
+        document.body.classList.remove('sidebar-open');
+    }
+
+    // Gunakan Event Listener langsung dengan penanganan fallback
+    if (mobileMenuBtn) {
+        mobileMenuBtn.onclick = openSidebar;
+    }
+
+    if (closeBtn) {
+        closeBtn.onclick = closeSidebar;
+    }
+
+    if (sidebarOverlay) {
+        sidebarOverlay.onclick = closeSidebar;
+    }
+
+    // Dropdown Accordion khusus Mobile
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.onclick = function(e) {
+            if (window.innerWidth <= 1000) {
+                e.preventDefault();
+                const parentDropdown = this.parentElement;
+                parentDropdown.classList.toggle('active');
+            }
+        };
+    });
 });
