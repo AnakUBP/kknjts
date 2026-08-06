@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil & Struktur - KKN Desa Jatisari</title>
+    <!-- Menghubungkan file styles.css -->
+    <link rel="stylesheet" href="styles.css?v=3.0">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- BRAND LOGO -->
+            <a href="index.html" class="brand-logo">
+                <img src="img/logo1.jpeg" class="logo-img" alt="Logo KKN">
+                <span class="logo-text">KKN JATISARI</span>
+            </a>
+
+            <!-- TOMBOL HAMBURGER -->
+            <button class="menu-btn" id="mobile-menu-btn" type="button" onclick="toggleSidebar(event)">
+                ☰
+            </button>
+
+            <!-- OVERLAY -->
+            <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar(event)"></div>
+
+            <!-- SIDEBAR NAV MENU -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="sidebar-header">
+                    <span>Menu Navigasi</span>
+                    <button class="close-btn" id="close-btn" type="button" onclick="closeSidebar(event)">&times;</button>
+                </li>
+                
+                <li><a href="index.html" class="nav-link">🏠 Dashboard</a></li>
+                
+                <!-- DROPDOWN TENTANG KAMI DENGAN ANCHOR LINK -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle active" onclick="toggleDropdown(event, this)">👥 Tentang Kami ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#tentang" onclick="closeSidebar(event)">👥 Tentang KKN</a></li>
+                        <li><a href="#struktur-organisasi" onclick="closeSidebar(event)">🏛️ Struktur Organisasi</a></li>
+                        <li><a href="#profil-anggota" onclick="closeSidebar(event)">👨‍🎓 Profil Anggota</a></li>
+                    </ul>
+                </li>
+
+                <!-- DROPDOWN KEGIATAN -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" onclick="toggleDropdown(event, this)">📋 Kegiatan ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="proker.html">📋 Program Kerja</a></li>
+                        <li><a href="timeline.html">📅 Timeline Kegiatan</a></li>
+                        <li><a href="galeri.html">🖼️ Dokumentasi / Galeri</a></li>
+                        <li><a href="statistik.html">📊 Statistik Program</a></li>
+                    </ul>
+                </li>
+
+                <!-- DROPDOWN INFORMASI DESA -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" onclick="toggleDropdown(event, this)">🌾 Informasi Desa ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="umkm.html">🏪 UMKM Desa</a></li>
+                        <li><a href="peta.html">📍 Peta Desa</a></li>
+                        <li><a href="download.html">📥 Download Center</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="kontak.html" class="nav-link">📞 Kontak Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HEADER HALAMAN -->
+    <section  id="tentang" class="page-header">
+        <div class="page-header-content">
+            <span class="hero-badge">PROFIL PENGABDIAN</span>
+            <h1>Tentang KKN Desa Jatisari</h1>
+            <p>Informasi dasar mengenai tema, visi, misi, serta pelaksanaan program Kuliah Kerja Nyata.</p>
+        </div>
+    </section>
+
+    <!-- KONTEN UTAMA -->
+    <main class="container">
+        
+        <!-- SECTION 1: TENTANG KKN (ID: tentang) -->
+        <div class="section-scroll-target">
+            <section class="profile-card theme-card">
+                <div class="card-icon">🎯</div>
+                <div class="card-body">
+                    <h2>Tema KKN</h2>
+                    <p class="highlight-text">"Pemberdayaan Masyarakat Desa Berbasis Inovasi Teknologi dan Optimalisasi Potensi Lokal Menuju Jatisari Mandiri"</p>
+                </div>
+            </section>
+
+            <div class="grid-2">
+                <section class="profile-card">
+                    <div class="card-icon">👁️</div>
+                    <h2>Visi</h2>
+                    <p>Terwujudnya Desa Jatisari yang mandiri, berdaya saing, dan sejahtera melalui pengabdian mahasiswa yang berkelanjutan serta berbasis kebutuhan masyarakat.</p>
+                </section>
+
+                <section class="profile-card">
+                    <div class="card-icon">🚀</div>
+                    <h2>Misi</h2>
+                    <ul class="misi-list">
+                        <li>Mengembangkan potensi UMKM lokal melalui digitalisasi dan pendampingan pemasaran.</li>
+                        <li>Meningkatkan kepedulian lingkungan melalui program penghijauan dan pengelolaan sampah.</li>
+                        <li>Mengoptimalkan kualitas pendidikan dan literasi digital bagi anak-anak di Desa Jatisari.</li>
+                        <li>Membangun silaturahmi dan kemitraan yang harmonis antara mahasiswa dan warga desa.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- INFORMASI PELAKSANAAN -->
+            <section class="info-section">
+                <h2 class="section-title">Informasi Pelaksanaan</h2>
+                <p class="section-subtitle">Detail teknis operasional kegiatan Kuliah Kerja Nyata</p>
+
+                <div class="info-grid">
+                    <div class="info-box">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h3>Lokasi KKN</h3>
+                            <p>Desa Jatisari, Kec. Jatisari, Kab. Karawang</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">📅</div>
+                        <div class="info-content">
+                            <h3>Periode Pelaksanaan</h3>
+                            <p>1 Agustus 2026 – 30 Agustus 2026</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">👨‍🏫</div>
+                        <div class="info-content">
+                            <h3>Dosen Pembimbing Lapangan</h3>
+                            <p><strong>Nama DPL, M.Pd.</strong></p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">👥</div>
+                        <div class="info-content">
+                            <h3>Jumlah Mahasiswa</h3>
+                            <p><strong>22 Mahasiswa</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <hr class="section-divider">
+
+        <!-- SECTION UTAMA: STRUKTUR ORGANISASI (GABUNGAN DESA & KKN) -->
+        <section id="struktur-organisasi" class="section-scroll-target">
+            <div class="section-header-box">
+                <h2 class="section-title">Struktur Organisasi</h2>
+                <p class="section-subtitle">Bagan Hierarki Perangkat Desa Jatisari dan Tim Pengabdian KKN</p>
+            </div>
+
+            <!-- SUB-SECTION 1: PERANGKAT DESA (4 LEVEL) -->
+            <div class="sub-structure-wrapper" id="struktur-desa">
+                <div class="sub-header-title">
+                    <span class="sub-icon">🏛️</span>
+                    <h3>Pemerintahan Desa Jatisari</h3>
+                </div>
+
+                <div class="tree-wrapper">
+                    <!-- LEVEL 1: KEPALA DESA -->
+                    <div class="tree-level level-1">
+                        <div class="tree-card leader-card">
+                            <div class="tree-icon">👑</div>
+                            <span class="role-badge">Level 1 - Pimpinan</span>
+                            <h3>Nama Kepala Desa</h3>
+                            <p class="role-title">Kepala Desa Jatisari</p>
+                        </div>
+                    </div>
+
+                    <!-- LEVEL 2: SEKRETARIS DESA -->
+                    <div class="tree-level level-2">
+                        <div class="tree-card sec-card">
+                            <div class="tree-icon">📜</div>
+                            <span class="role-badge">Level 2 - Sekretariat</span>
+                            <h3>Nama Sekretaris</h3>
+                            <p class="role-title">Sekretaris Desa</p>
+                        </div>
+                    </div>
+
+                    <!-- LEVEL 3: KAUR & KASI -->
+                    <div class="tree-level level-3">
+                        <div class="tree-card">
+                            <div class="tree-icon">💰</div>
+                            <span class="role-badge">Level 3 - Urusan</span>
+                            <h3>Nama Kaur Keuangan</h3>
+                            <p class="role-title">Kaur Keuangan</p>
+                        </div>
+                        <div class="tree-card">
+                            <div class="tree-icon">🏢</div>
+                            <span class="role-badge">Level 3 - Urusan</span>
+                            <h3>Nama Kaur Umum</h3>
+                            <p class="role-title">Kaur Umum & Perencanaan</p>
+                        </div>
+                        <div class="tree-card">
+                            <div class="tree-icon">🤝</div>
+                            <span class="role-badge">Level 3 - Seksi</span>
+                            <h3>Nama Kasi Pelayanan</h3>
+                            <p class="role-title">Kasi Pelayanan & Kesejahteraan</p>
+                        </div>
+                        <div class="tree-card">
+                            <div class="tree-icon">🛡️</div>
+                            <span class="role-badge">Level 3 - Seksi</span>
+                            <h3>Nama Kasi Pemerintahan</h3>
+                            <p class="role-title">Kasi Pemerintahan</p>
+                        </div>
+                    </div>
+
+                    <!-- LEVEL 4: KEPALA DUSUN -->
+                    <div class="tree-level level-4">
+                        <div class="tree-card">
+                            <div class="tree-icon">🏘️</div>
+                            <span class="role-badge">Level 4 - Kewilayahan</span>
+                            <h3>Kepala Dusun 1</h3>
+                            <p class="role-title">Dusun Jatisari I</p>
+                        </div>
+                        <div class="tree-card">
+                            <div class="tree-icon">🏘️</div>
+                            <span class="role-badge">Level 4 - Kewilayahan</span>
+                            <h3>Kepala Dusun 2</h3>
+                            <p class="role-title">Dusun Jatisari II</p>
+                        </div>
+                        <div class="tree-card">
+                            <div class="tree-icon">🏘️</div>
+                            <span class="role-badge">Level 4 - Kewilayahan</span>
+                            <h3>Kepala Dusun 3</h3>
+                            <p class="role-title">Dusun Jatisari III</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inner-divider"></div>
+
+            <!-- SUB-SECTION 2: TIM KKN (4 LEVEL) -->
+            <div class="sub-structure-wrapper" id="struktur-kkn">
+                <div class="sub-header-title">
+                    <span class="sub-icon">🎓</span>
+                    <h3>Tim Mahasiswa KKN</h3>
+                </div>
+
+                <div class="tree-wrapper">
+                    <!-- LEVEL 1: DPL -->
+                    <div class="tree-level level-1">
+                        <div class="tree-card dpl-card">
+                            <div class="tree-icon">🎓</div>
+                            <span class="role-badge dpl-badge">DPL</span>
+                            <h3>Nama DPL, M.Pd.</h3>
+                            <p class="role-title">Dosen Pembimbing Lapangan</p>
+                        </div>
+                    </div>
+
+                    <!-- LEVEL 2: KETUA & WAKIL -->
+                    <div class="tree-level level-2">
+                        <div class="tree-card leader-card">
+                            <div class="tree-icon">⭐</div>
+                            <span class="role-badge">Ketua KKN</span>
+                            <h3>Nama Ketua Tim</h3>
+                            <p class="role-title">Ketua Pengabdian</p>
+                        </div>
+                        <div class="tree-card leader-card">
+                            <div class="tree-icon">⭐</div>
+                            <span class="role-badge">Wakil Ketua</span>
+                            <h3>Nama Wakil Ketua Tim</h3>
+                            <p class="role-title">Wakil Ketua Pengabdian</p>
+                        </div>
+                    </div>
+
+                    <!-- LEVEL 3: SEKRETARIS & BENDAHARA -->
+                    <div class="tree-level level-3">
+                        <div class="tree-card sec-card">
+                            <div class="tree-icon">📝</div>
+                            <span class="role-badge">Sekretaris 1</span>
+                            <h3>Nama Sekretaris 1</h3>
+                            <p class="role-title">Sekretaris Tim</p>
+                        </div>
+                        <div class="tree-card sec-card">
+                            <div class="tree-icon">📝</div>
+                            <span class="role-badge">Sekretaris 2</span>
+                            <h3>Nama Sekretaris 2</h3>
+                            <p class="role-title">Sekretaris Tim</p>
+                        </div>
+                        <div class="tree-card sec-card">
+                            <div class="tree-icon">💵</div>
+                            <span class="role-badge">Bendahara 1</span>
+                            <h3>Nama Bendahara 1</h3>
+                            <p class="role-title">Bendahara Tim</p>
+                        </div>
+                        <div class="tree-card sec-card">
+                            <div class="tree-icon">💵</div>
+                            <span class="role-badge">Bendahara 2</span>
+                            <h3>Nama Bendahara 2</h3>
+                            <p class="role-title">Bendahara Tim</p>
+                        </div>
+                    </div>
+
+                    <!-- LEVEL 4: DIVISI-DIVISI -->
+                    <div class="tree-level level-4">
+                        <div class="tree-card">
+                            <div class="tree-icon">🧾</div>
+                            <span class="role-badge">Div. Acara</span>
+                            <h3>Koordinator & Anggota</h3>
+                            <p class="role-title">Pengelola Program</p>
+                        </div>
+                        <div class="tree-card">
+                            <div class="tree-icon">📸</div>
+                            <span class="role-badge">Div. PDD</span>
+                            <h3>Koordinator & Anggota</h3>
+                            <p class="role-title">Publikasi & Dok.</p>
+                        </div>
+                        <div class="tree-card">
+                            <div class="tree-icon">🍔</div>
+                            <span class="role-badge">Div. Konsumsi</span>
+                            <h3>Koordinator & Anggota</h3>
+                            <p class="role-title">Logistik & Konsumsi</p>
+                        </div>
+                        <div class="tree-card">
+                            <div class="tree-icon">🤝</div>
+                            <span class="role-badge">Div. Humas</span>
+                            <h3>Koordinator & Anggota</h3>
+                            <p class="role-title">Hubungan Masyarakat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <hr class="section-divider">
+
+        <!-- SECTION: PROFIL ANGGOTA TIM KKN -->
+        <section id="profil-anggota" class="section-scroll-target">
+            <div class="section-header-box">
+                <h2 class="section-title">Profil Anggota Tim KKN</h2>
+                <p class="section-subtitle">Mengenal lebih dekat para mahasiswa pengabdi Desa Jatisari</p>
+            </div>
+
+            <!-- ANGGOTA GRID -->
+            <div class="member-grid">
+
+                <!-- KARTU ANGGOTA 1 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag leader-tag">Ketua Tim</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa, S.Kom</h3>
+                        <p class="member-prodi">Teknik Informatika</p>
+                        <p class="member-role">Koordinator Utama Program</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KARTU ANGGOTA 2 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag sec-tag">Sekretaris</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Sistem Informasi</p>
+                        <p class="member-role">Administrasi & Dokumen</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KARTU ANGGOTA 3 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Acara</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Manajemen</p>
+                        <p class="member-role">Koor. Program Kerja</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KARTU ANGGOTA 4 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi PDD</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Desain Komunikasi Visual</p>
+                        <p class="member-role">Publikasi & Website</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KARTU ANGGOTA 5 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Humas</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Hukum</p>
+                        <p class="member-role">Hubungan Masyarakat</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                                <!-- KARTU ANGGOTA 6 -->
+                <div class="member-card-item">
+                    <div class="member-photo-wrapper">
+                        <img src="img/logo1.jpeg" alt="Foto Anggota">
+                        <span class="member-tag">Divisi Logistik</span>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nama Mahasiswa</h3>
+                        <p class="member-prodi">Teknik Industri</p>
+                        <p class="member-role">Perlengkapan & Lokasi</p>
+                        <div class="member-socials">
+                            <a href="#" target="_blank" aria-label="Instagram"> Instagram</a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Tim KKN Desa Jatisari</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="script.js?v=3.0"></script>
+</body>
+</html>

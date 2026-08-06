@@ -40,6 +40,19 @@ a {
   text-decoration: none;
 }
 
+html {
+  /* Membuat pergerakan scroll menjadi mulus */
+  scroll-behavior: smooth;
+  
+  /* Memberikan kompensasi tinggi navbar agar judul tidak tertutup */
+  scroll-padding-top: 120px; 
+}
+
+/* Offset khusus untuk setiap elemen target anchor ID */
+.section-scroll-target {
+  scroll-margin-top: 120px;
+}
+
 /* ==========================================
    2. NAVBAR
    ========================================== */
@@ -49,12 +62,12 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 20vh;
+  height: 16vh;
   align-content: center;
   transition: var(--transition);
 }
 .navbar-scrolled {
-  height: 15vh !important;
+  height: 13vh !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 .nav-container {
@@ -160,7 +173,7 @@ a {
    ========================================== */
 .hero {
   width: 100%;
-  min-height: 80vh;
+  height: 84vh;
   background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) , url(img/background1.JPG);
   background-size: cover;
   background-position: center;
@@ -318,6 +331,146 @@ a {
 }
 
 /* ==========================================
+   STYLING KHUSUS HALAMAN PROFIL (profil.html)
+   ========================================== */
+
+/* Header Halaman (Banner Atas) */
+.page-header {
+  background: radial-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(img/background1.JPG);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.page-header-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+}
+
+.page-header p {
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+/* Card Profil & Visi Misi */
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.theme-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-left: 5px solid var(--secondary-color);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+}
+
+.highlight-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Layout Grid 2 Kolom */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.misi-list {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.misi-list li {
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+/* Grid Informasi Pelaksanaan */
+.info-section {
+  margin-top: 3rem;
+  margin-bottom: 10vh;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-box {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: var(--transition);
+}
+
+.info-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.info-icon {
+  font-size: 2rem;
+  background-color: #f1f5f9;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+}
+
+.info-content h3 {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.info-content p {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.sub-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* Responsive Mobile Penyesuaian */
+@media (max-width: 600px) {
+  .theme-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ==========================================
    STYLING SIDEBAR OFF-CANVAS (LEBAR <= 1000PX)
    ========================================== */
 
@@ -329,6 +482,285 @@ body.sidebar-open {
 .sidebar-header, 
 .sidebar-overlay {
   display: none;
+}
+
+/* ==========================================
+   STYLING SUB-STRUCTURE WRAPPER (GABUNGAN)
+   ========================================== */
+
+.sub-structure-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+  margin-bottom: 2rem;
+}
+
+.sub-header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px dashed #cbd5e1;
+}
+
+.sub-header-title h3 {
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.sub-icon {
+  font-size: 1.5rem;
+}
+
+.inner-divider {
+  height: 2rem;
+}
+
+/* ==========================================
+   BAGAN POHON HIERARKI 4 LEVEL (TREE CSS)
+   ========================================== */
+
+.tree-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.25rem;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.tree-level {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* Kartu Individu */
+.tree-card {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  min-width: 160px;
+  max-width: 210px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: var(--transition);
+}
+
+.tree-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- GARIS PENGHUBUNG KANATAS (LEVEL 2, 3, 4) --- */
+.level-2 .tree-card::before,
+.level-3 .tree-card::before,
+.level-4 .tree-card::before {
+  content: '';
+  position: absolute;
+  top: -1.15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 1.15rem;
+  background-color: #94a3b8;
+}
+
+/* --- GARIS PENGHUBUNG KEBAWAH (LEVEL 1, 2, 3) --- */
+.level-1 .tree-card::after,
+.level-2 .tree-card::after,
+.level-3 .tree-card::after {
+  content: '';
+  position: absolute;
+  bottom: -1.15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 1.15rem;
+  background-color: #94a3b8;
+}
+
+/* Custom Color per Level */
+.leader-card {
+  border-top: 4px solid var(--secondary-color);
+  background-color: #f8fafc;
+}
+
+.dpl-card {
+  border-top: 4px solid var(--accent-color);
+  background-color: #f8fafc;
+}
+
+.sec-card {
+  border-top: 3px solid #64748b;
+}
+
+.member-card {
+  border-top: 3px solid #cbd5e1;
+  background-color: #f9fafb;
+}
+
+.tree-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.role-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--secondary-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dpl-badge {
+  background-color: var(--accent-color) !important;
+}
+
+.member-badge {
+  background-color: #64748b !important;
+}
+
+.tree-card h3 {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin: 0;
+  font-weight: 700;
+}
+
+.role-title {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* ==========================================
+   STYLING PROFIL ANGGOTA (profil-anggota)
+   ========================================== */
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.member-card-item {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.member-card-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
+}
+
+.member-photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #f1f5f9;
+  overflow: hidden;
+}
+
+.member-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.member-card-item:hover .member-photo-wrapper img {
+  transform: scale(1.05);
+}
+
+.member-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.leader-tag {
+  background-color: var(--accent-color) !important;
+}
+
+.sec-tag {
+  background-color: #64748b !important;
+}
+
+.member-info {
+  padding: 1.25rem 1rem;
+}
+
+.member-info h3 {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.member-prodi {
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.member-role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.member-socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 0.75rem;
+}
+
+.member-socials a {
+  font-size: 0.75rem;
+  color: var(--text-main);
+  background-color: #f8fafc;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  transition: var(--transition);
+}
+
+.member-socials a:hover {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  border-color: var(--secondary-color);
 }
 
 @media (max-width: 1000px) {
@@ -442,5 +874,24 @@ body.sidebar-open {
 
   .dropdown.active .dropdown-menu {
     display: block !important;
+  }
+  .tree-level {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .tree-card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .level-2 .tree-card::before,
+  .level-3 .tree-card::before,
+  .level-4 .tree-card::before,
+  .level-1 .tree-card::after,
+  .level-2 .tree-card::after,
+  .level-3 .tree-card::after {
+    height: 0.65rem;
   }
 }

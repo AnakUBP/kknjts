@@ -9,44 +9,44 @@
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
             <!-- BRAND LOGO -->
-            <div class="brand-logo">
+            <a href="index.html" class="brand-logo">
                 <img src="img/logo1.jpeg" class="logo-img" alt="Logo KKN">
                 <span class="logo-text">KKN JATISARI</span>
-            </div>
+            </a>
 
-            <!-- TOMBOL HAMBURGER (Harus Sejajar di nav-container) -->
-            <button class="menu-btn" id="mobile-menu-btn" type="button" aria-label="Toggle Menu">
+            <!-- TOMBOL HAMBURGER -->
+            <button class="menu-btn" id="mobile-menu-btn" type="button" onclick="toggleSidebar(event)">
                 ☰
             </button>
 
             <!-- OVERLAY -->
-            <div class="sidebar-overlay" id="sidebar-overlay"></div>
+            <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar(event)"></div>
 
             <!-- SIDEBAR NAV MENU -->
             <ul class="nav-menu" id="nav-menu">
                 <li class="sidebar-header">
                     <span>Menu Navigasi</span>
-                    <button class="close-btn" id="close-btn" type="button">&times;</button>
+                    <button class="close-btn" id="close-btn" type="button" onclick="closeSidebar(event)">&times;</button>
                 </li>
                 
-                <!-- LIST MENU KAMU -->
                 <li><a href="index.html" class="nav-link active">🏠 Dashboard</a></li>
-                <!-- DROPDOWN 1 -->
+                
+                <!-- DROPDOWN TENTANG KAMI DENGAN ANCHOR LINK -->
                 <li class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">👥 Tentang Kami ▾</a>
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle active" onclick="toggleDropdown(event, this)">👥 Tentang Kami ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="profil.html#tentang">👥 Tentang KKN</a></li>
-                        <li><a href="profil.html#struktur">🏛️ Struktur Organisasi</a></li>
-                        <li><a href="profil.html#anggota">👨‍🎓 Profil Anggota</a></li>
+                        <li><a href="profile.html#tentang" onclick="closeSidebar(event)">👥 Tentang KKN</a></li>
+                        <li><a href="profile.html#struktur-organisasi" onclick="closeSidebar(event)">🏛️ Struktur Organisasi</a></li>
+                        <li><a href="profile.html#profil-anggota" onclick="closeSidebar(event)">👨‍🎓 Profil Anggota</a></li>
                     </ul>
                 </li>
-
-                <!-- DROPDOWN 2 -->
+                <!-- DROPDOWN KEGIATAN -->
                 <li class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">📋 Kegiatan ▾</a>
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" onclick="toggleDropdown(event, this)">📋 Kegiatan ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="proker.html">📋 Program Kerja</a></li>
                         <li><a href="timeline.html">📅 Timeline Kegiatan</a></li>
@@ -55,9 +55,9 @@
                     </ul>
                 </li>
 
-                <!-- DROPDOWN 3 -->
+                <!-- DROPDOWN INFORMASI DESA -->
                 <li class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">🌾 Informasi Desa ▾</a>
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" onclick="toggleDropdown(event, this)">🌾 Informasi Desa ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="umkm.html">🏪 UMKM Desa</a></li>
                         <li><a href="peta.html">📍 Peta Desa</a></li>
