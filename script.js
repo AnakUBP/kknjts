@@ -191,4 +191,42 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(quoteSection);
         }
     }
+    // 1. Ambil semua section yang memiliki atribut ID
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+
+    // Jika tidak ada section di halaman ini (misal di halaman lain), tidak perlu jalankan observer
+    if (sections.length === 0) return;
+
+    // 2. Opsi untuk IntersectionObserver (mendeteksi saat section fokus di layar)
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -45% 0px', // Fokus area deteksi di tengah layar
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const currentId = entry.target.getAttribute('id');
+
+                // Hapus kelas 'active' dari seluruh nav-link
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                // Cari link yang atribut href-nya mengarah ke ID section saat ini
+                // Mendukung pencocokan: "index.html#id" maupun "#id"
+                const activeLink = Array.from(navLinks).find(link => {
+                    const href = link.getAttribute('href');
+                    return href && (href.endsWith(`#${currentId}`) || href === `#${currentId}`);
+                });
+
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    }, observerOptions);
+
+    // 3. Daftarkan setiap section ke observer
+    sections.forEach(section => observer.observe(section));
 });

@@ -52,13 +52,14 @@ html {
   scroll-behavior: smooth;
   
   /* Memberikan kompensasi tinggi navbar agar judul tidak tertutup */
-  scroll-padding-top: 60px; 
+  scroll-padding-top: 120px; 
 }
 
 /* Offset khusus untuk setiap elemen target anchor ID */
 .section-scroll-target {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
 }
+
 /* ==========================================
    2. NAVBAR
    ========================================== */
@@ -110,46 +111,13 @@ html {
   white-space: nowrap;
 }
 
-.nav-link:hover, 
-.nav-link.active {
-  color: var(--primary-hover);
+/* Styling ketika link navigasi aktif */
+.nav-link.active{
+  color: var(--primary-hover) !important;
   font-weight: 700;
+  border-bottom: 2px solid var(--primary-hover); /* Opsional: garis bawah */
 }
 
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--secondary-color); /* Warna submenu sedikit lebih terang dari navbar */
-  min-width: 210px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  padding: 0.5rem 0;
-  list-style: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.25s ease;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 0.6rem 1.2rem;
-  color: var(--primary-color);
-  font-size: 0.9rem;
-  transition: var(--transition);
-}
-
-.dropdown-menu li a:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  padding-left: 1.5rem; /* Efek bergeser ke kanan saat di-hover */
-}
 
 /* Tampilkan dropdown saat mouse di-hover di Desktop */
 @media (min-width: 769px) {
@@ -1191,7 +1159,6 @@ body.sidebar-open {
    ========================================== */
 
 #penggerak-perubahan {
-  padding: 4rem 0;
   background-color: #ffffff;
 }
 
@@ -1339,7 +1306,6 @@ body.sidebar-open {
    ========================================== */
 
 #kolaborasi-lingkungan {
-  padding: 4rem 0;
   background-color: #ffffff;
 }
 
