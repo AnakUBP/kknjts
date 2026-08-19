@@ -8,16 +8,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
             <!-- BRAND LOGO -->
             <a href="index.html" class="brand-logo">
                 <img src="img/logo1.jpeg" class="logo-img" alt="Logo KKN">
-                <span class="logo-text">KKN JATISARI</span>
+                <span class="logo-text">KKN DESA JATISARI 2026</span>
             </a>
-
             <!-- TOMBOL HAMBURGER -->
             <button class="menu-btn" id="mobile-menu-btn" type="button" onclick="toggleSidebar(event)">
                 ☰
@@ -32,86 +30,723 @@
                     <span>Menu Navigasi</span>
                     <button class="close-btn" id="close-btn" type="button" onclick="closeSidebar(event)">&times;</button>
                 </li>
-                
-                <li><a href="index.html" class="nav-link active">🏠 Dashboard</a></li>
-                
-                <!-- DROPDOWN TENTANG KAMI DENGAN ANCHOR LINK -->
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="nav-link dropdown-toggle active" onclick="toggleDropdown(event, this)">👥 Tentang Kami ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="profile.html#tentang" onclick="closeSidebar(event)">👥 Tentang KKN</a></li>
-                        <li><a href="profile.html#struktur-organisasi" onclick="closeSidebar(event)">🏛️ Struktur Organisasi</a></li>
-                        <li><a href="profile.html#profil-anggota" onclick="closeSidebar(event)">👨‍🎓 Profil Anggota</a></li>
-                    </ul>
-                </li>
-                <!-- DROPDOWN KEGIATAN -->
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" onclick="toggleDropdown(event, this)">📋 Kegiatan ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="proker.html">📋 Program Kerja</a></li>
-                        <li><a href="timeline.html">📅 Timeline Kegiatan</a></li>
-                        <li><a href="galeri.html">🖼️ Dokumentasi / Galeri</a></li>
-                        <li><a href="statistik.html">📊 Statistik Program</a></li>
-                    </ul>
-                </li>
-
-                <!-- DROPDOWN INFORMASI DESA -->
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="nav-link dropdown-toggle" onclick="toggleDropdown(event, this)">🌾 Informasi Desa ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="umkm.html">🏪 UMKM Desa</a></li>
-                        <li><a href="peta.html">📍 Peta Desa</a></li>
-                        <li><a href="download.html">📥 Download Center</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="kontak.html" class="nav-link">📞 Kontak Kami</a></li>
+                <li><a href="index.html#top-page" class="nav-link active">Beranda</a></li>
+                <li><a href="index.html#alur-transformasi" class="nav-link">Tentang Kami</a></li>
+                <li><a href="index.html#agenda-pemberdayaan"class="nav-link"> Program Kerja</a></li>
+                <li><a href="index.html#dokumentasi-visual" class="nav-link"> Galeri</a></li>
+                <li><a href="index.html#umkm-desa" class="nav-link"> UMKM</a></li>
+                <li><a href="index.html#penggerak-perubahan" class="nav-link">Struktur Organisasi</a></li>
+                <li><a href="index.html#kolaborasi-lingkungan" class="nav-link">Kontak Kami</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero">
+    <!-- POP-UP PETUNJUK SCROLL -->
+    <div id="scroll-toast" class="scroll-toast">
+        <span class="scroll-text">Scroll ke bawah untuk melihat konten</span>
+        <span class="scroll-icon">↓</span>
+    </div>
+
+    <section id="top-page" class="hero">
         <div class="hero-content">
-            <span class="hero-badge">KULIAH KERJA NYATA 2026</span>
-            <h1 class="hero-title">Membangun Desa, Mengabdi Untuk Masyarakat</h1>
-            <p class="hero-description">Dokumentasi resmi seluruh program pengabdian dan inovasi Tim KKN di Desa Jatisari.</p>
+            <span class="hero-badge">KKN TEMATIK LINGKUNGAN 2026</span>
+            <h1 class="hero-title">Optimalisasi Pengelolaan Sampah Berbasis Edukasi, Teknologi, dan Pemberdayaan Masyarakat</h1>
+            <p class="hero-description">Program KKN Universitas & Desa Jatisari berkolaborasi meluncurkan sistem pengelolaan sirkular untuk menjadi kelola sampah dengan sungguh, wujudkan lingkungan yang tangguh.</p>
             <div class="btn-group">
-                <a href="proker.html" class="btn btn-secondary">Lihat Program Kerja</a>
-                <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+                <a href="proker.html" class="btn btn-secondary">JELAJAHI PROGRAM</a>
+                <a href="kontak.html" class="btn btn-primary">LIHAT GALERI</a>
+            </div>
+        </div>
+    </section>
+    <section id="alur-transformasi">
+        <div class="container">
+            
+            <!-- HEADER SECTION -->
+            <div class="transform-header">
+                <div class="badge-tag-blue">
+                    <span class="badge-dot">•</span>
+                    <span class="badge-text">ALUR TRANSFORMASI</span>
+                </div>
+                <h2 class="transform-title">Dari Ancaman Menjadi Peluang Berkelanjutan</h2>
+                <p class="transform-subtitle">
+                    Bagaimana kolaborasi mahasiswa KKN dan warga memicu perubahan sistematis dari hulu ke hilir demi masa depan Desa Jatisari.
+                </p>
+            </div>
+
+            <!-- GRID 6 KARTU -->
+            <div class="transform-grid">
+
+                <!-- KARTU 01 -->
+                <div class="transform-card">
+                    <div class="card-head">
+                        <span class="step-num">01</span>
+                        <span class="pill-badge">KONDISI</span>
+                    </div>
+                    <h3>Masalah Sampah</h3>
+                    <p>Tumpukan sampah organik & plastik yang masih dibuang ke sungai dampaknya pertanian sawah tidak subur.</p>
+                    <div class="card-img-box">
+                        <img src="img/gambar1.png" alt="Masalah Sampah">
+                    </div>
+                </div>
+
+                <!-- KARTU 02 -->
+                <div class="transform-card">
+                    <div class="card-head">
+                        <span class="step-num">02</span>
+                        <span class="pill-badge">PREVENTIF</span>
+                    </div>
+                    <h3>Sosialisasi 3R</h3>
+                    <p>Sosialisasi ini dihadiri per kepala keluarga dan memberikan edukasi seberapa pentingnya kesadaran sirkular sejak dini.</p>
+                    <div class="card-img-box">
+                        <img src="img/gambar2.jpg" alt="Sosialisasi 3R">
+                    </div>
+                </div>
+
+                <!-- KARTU 03 -->
+                <div class="transform-card">
+                    <div class="card-head">
+                        <span class="step-num">03</span>
+                        <span class="pill-badge">METODE</span>
+                    </div>
+                    <h3>Injeksi Teknologi</h3>
+                    <p>Penerapan alat pencacah sampah organik untuk meminimalisir sampah agar menjadi kompos atau eco-enzyme.</p>
+                    <div class="card-img-box img-contain">
+                        <img src="img/gambar3.png" alt="Injeksi Teknologi">
+                    </div>
+                </div>
+
+                <!-- KARTU 04 -->
+                <div class="transform-card">
+                    <div class="card-head">
+                        <span class="step-num">04</span>
+                        <span class="pill-badge">SINERGI</span>
+                    </div>
+                    <h3>Aksi Bersama</h3>
+                    <p>Gotong royong massal melibatkan seluruh dusun membersihkan sungai dan jalanan desa.</p>
+                    <div class="card-img-box">
+                        <img src="img/gambar4.jpg" alt="Aksi Bersama">
+                    </div>
+                </div>
+
+                <!-- KARTU 05 -->
+                <div class="transform-card">
+                    <div class="card-head">
+                        <span class="step-num">05</span>
+                        <span class="pill-badge">EKONOMI</span>
+                    </div>
+                    <h3>Pemberdayaan</h3>
+                    <p>Pendirian Bank Sampah mandiri dan pelatihan kerajinan komersial bernilai jual tinggi.</p>
+                    <div class="card-img-box">
+                        <img src="img/gambar5.png" alt="Pemberdayaan">
+                    </div>
+                </div>
+
+                <!-- KARTU 06 -->
+                <div class="transform-card">
+                    <div class="card-head">
+                        <span class="step-num">06</span>
+                        <span class="pill-badge">DAMPAK</span>
+                    </div>
+                    <h3>Perubahan Abadi</h3>
+                    <p>Lahirnya ekosistem desa mandiri sampah yang menginspirasi wilayah Jawa Barat.</p>
+                    <div class="card-img-box">
+                        <img src="img/gambar6.png" alt="Perubahan Abadi">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- SECTION METODOLOGI GERAKAN (3 PILAR UTAMA) -->
+    <section id="metodologi-gerakan" class="section-scroll-target">
+        <div class="container">
+            
+            <!-- HEADER SECTION -->
+            <div class="metodologi-header">
+                <div class="badge-tag-blue">
+                    <span class="badge-dot">•</span>
+                    <span class="badge-text">TIGA PILAR UTAMA</span>
+                </div>
+                <h2 class="metodologi-title">Metodologi Gerakan KKN Desa Jatisari</h2>
+            </div>
+
+            <!-- LIST PILAR (ZIGZAG LAYOUT) -->
+            <div class="pilar-wrapper">
+
+                <!-- PILAR 1 (FOTO KIRI) -->
+                <div class="pilar-card">
+                    <div class="pilar-media">
+                        <img src="img/gambar7.jpg" alt="Edukasi Kesadaran Lingkungan">
+                    </div>
+                    <div class="pilar-content">
+                        <span class="pilar-badge">PILAR 1: EDUKASI</span>
+                        <h3>Membangun Kesadaran Lingkungan Kolektif</h3>
+                        <p>
+                            Kami percaya kesadaran adalah fondasi dari keberlanjutan. Melalui metode interaktif  sosialisasi 3R seperti memberikan praktik dampak nya langsung edukasi bagi anak-anak dan sosialisasi langsung ke rumah warga (door-to-door), kami menanamkan kebiasaan memilah sampah organik dan anorganik langsung dari yang paling terdekat seperti sampah dapur keluarga.
+                        </p>
+                        <blockquote class="pilar-quote">
+                            "Satu pilahan sampah di rumah hari ini mencegah bencana penumpukan esok hari."
+                            <cite>— KKN Desa Jatisari</cite>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- PILAR 2 (FOTO KANAN / REVERSE) -->
+                <div class="pilar-card pilar-reverse">
+                    <div class="pilar-media">
+                        <img src="img/gambar8.png" alt="Inovasi Pengelolaan Sampah">
+                    </div>
+                    <div class="pilar-content">
+                        <span class="pilar-badge">PILAR 2: TEKNOLOGI</span>
+                        <h3>Inovasi Pengelolaan Sampah Tepat Eco Enzyme & Pupuk Kompos</h3>
+                        <p>
+                            Teknologi tidak selalu harus rumit, tetapi harus fungsional dan mudah diterapkan. Melalui program ini, kami memperkenalkan pengolahan sampah organik menjadi eco enzyme dan pupuk kompos dengan memanfaatkan galon plastik bekas sebagai wadah pengolahan. Sisa makanan dan bahan organik rumah tangga dimasukkan ke dalam wadah tersebut untuk melalui proses fermentasi selama kurang lebih tiga bulan sebelum dapat digunakan.
+                        </p>
+                        <div class="pilar-stats">
+                            <div class="pilar-stat-item">
+                                <span class="pilar-stat-num">100%</span>
+                                <span class="pilar-stat-label">Bahan Lokal Murah</span>
+                            </div>
+                            <div class="pilar-stat-item">
+                                <span class="pilar-stat-num">24 Jam</span>
+                                <span class="pilar-stat-label">Proses Bio-Aktivator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PILAR 3 (FOTO KIRI) -->
+                <div class="pilar-card">
+                    <div class="pilar-media">
+                        <img src="img/gambar9.jpg" alt="Pemberdayaan Berdikari">
+                    </div>
+                    <div class="pilar-content">
+                        <span class="pilar-badge">PILAR 3: PEMBERDAYAAN</span>
+                        <h3>Bersama Menciptakan Perubahan Berdikari</h3>
+                        <p>
+                            Program KKN tidak selamanya berada di Jatisari. Karenanya, kami melatih PIC dari setiap dusun yang dipimpin teman-teman KKN Desa Jatisari, dengan harapan mereka yang akan mengoperasikan Bank Sampah secara berkala pasca-program berakhir.
+                        </p>
+                        <a href=# class="btn-outline-pilar">DAFTAR MENJADI KADER</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- SECTION LAPORAN CAPAIAN -->
+    <section id="laporan-capaian" class="section-scroll-target">
+        <div class="container">
+            
+            <!-- HEADER SECTION -->
+            <div class="capaian-header">
+                <div class="badge-tag-blue">
+                    <span class="badge-dot">•</span>
+                    <span class="badge-text">LAPORAN CAPAIAN</span>
+                </div>
+                <h2 class="capaian-title">Dampak Nyata yang Telah Diukir</h2>
+                <p class="capaian-subtitle">
+                    Data aktual kumulatif aktivitas lapangan mahasiswa dan warga selama periode pengabdian KKN Tematik 2026.
+                </p>
+            </div>
+
+            <!-- GRID 5 KOLOM ANGKA STATISTIK -->
+            <div class="capaian-grid grid-3">
+
+                <!-- ITEM 1 -->
+                <div class="capaian-item">
+                    <div class="card-stat-number">143+</div>
+                    <div class="capaian-line"></div>
+                    <p class="capaian-label">WARGA TEREDUKASI</p>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div class="capaian-item">
+                    <div class="card-stat-number">30+ kg</div>
+                    <div class="capaian-line"></div>
+                    <p class="capaian-label">SAMPAH TERKELOLA</p>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div class="capaian-item">
+                    <div class="card-stat-number">9</div>
+                    <div class="capaian-line"></div>
+                    <p class="capaian-label">PROGRAM KERJA</p>
+                </div>
+
+                <!-- ITEM 4 -->
+                <div class="capaian-item">
+                    <div class="card-stat-number">22</div>
+                    <div class="capaian-line"></div>
+                    <p class="capaian-label">MAHASISWA KKN</p>
+                </div>
+
+                <!-- ITEM 5 -->
+                <div class="capaian-item">
+                    <div class="card-stat-number">4 Minggu</div>
+                    <div class="capaian-line"></div>
+                    <p class="capaian-label">PROGRAM INTENSIF</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 6 AGENDA KERJA PEMBERDAYAAN -->
+    <section id="agenda-pemberdayaan" class="section-scroll-target">
+        <div class="container">
+            
+            <!-- HEADER SECTION -->
+            <div class="agenda-header">
+                <div class="badge-tag-blue">
+                    <span class="badge-dot">•</span>
+                    <span class="badge-text">INISIATIF UTAMA</span>
+                </div>
+                <h2 class="agenda-title">6 Agenda Kerja Pemberdayaan</h2>
+            </div>
+
+            <!-- GRID KARTU AGENDA (LEBAR BERVARIASI) -->
+            <div class="agenda-grid">
+
+                <!-- KARTU 1 (LEBAR / FEATURED) -->
+                <div class="agenda-card card-wide">
+                    <div class="agenda-text-box">
+                        <h3>Sosialisasi 3R</h3>
+                        <p>Edukasi mengumpulkan masyarakat per kepala keluarga mengenai metode pemisahan sampah dari sumber utama (rumah tangga) menggunakan ember pilah.</p>
+                    </div>
+                    <div class="agenda-img-box">
+                        <img src="img/gambar10.JPG" alt="Sosialisasi 3R">
+                    </div>
+                </div>
+
+                <!-- KARTU 2 (STANDAR) -->
+                <div class="agenda-card">
+                    <div class="agenda-text-box">
+                        <h3>Workshop Daur Ulang Kreatif</h3>
+                        <p>Pelatihan mengolah botol plastik bekas menjadi anyaman hias bernilai ekonomis.</p>
+                    </div>
+                    <div class="agenda-img-box">
+                        <img src="img/gambar11.jpg" alt="Workshop Daur Ulang">
+                    </div>
+                </div>
+
+                <!-- KARTU 3 (STANDAR - FIT CONTAINER UNTUK BOTOL/EKYM) -->
+                <div class="agenda-card">
+                    <div class="agenda-text-box">
+                        <h3>Pembuatan Eco Enzyme & Pupuk Kompos</h3>
+                        <p>Pengelolaan sampah organik atau sampah bekas sisa makanan kita menjadi eco enzyme & pupuk kompos.</p>
+                    </div>
+                    <div class="agenda-img-box img-contain">
+                        <img src="img/gambar12.png" alt="Eco Enzyme">
+                    </div>
+                </div>
+
+                <!-- KARTU 4 (LEBAR / FEATURED) -->
+                <div class="agenda-card card-wide">
+                    <div class="agenda-text-box">
+                        <h3>Penyusunan Bank Sampah Desa</h3>
+                        <p>Merancang sistem administrasi dan tabungan sampah bernilai rupiah bagi warga Jatisari.</p>
+                    </div>
+                    <div class="agenda-img-box">
+                        <img src="img/gambar2.jpg" alt="Bank Sampah Desa">
+                    </div>
+                </div>
+
+                <!-- KARTU 5 (STANDAR) -->
+                <div class="agenda-card">
+                    <div class="agenda-text-box">
+                        <h3>Penanaman Pohon & Penghijauan</h3>
+                        <p>Aksi kolaborasi aksi penghijauan desa melalui penanaman bibit pohon di sepanjang bahu jalan Dusun 3  di Desa Jatisari.</p>
+                    </div>
+                    <div class="agenda-img-box">
+                        <img src="img/gambar13.png" alt="Pelatihan Kompos">
+                    </div>
+                </div>
+
+                <!-- KARTU 6 (STANDAR) -->
+                <div class="agenda-card">
+                    <div class="agenda-text-box">
+                        <h3>Kampanye Lingkungan Digital</h3>
+                        <p>Penyebaran konten edukasi kreatif melalui media sosial Karang Taruna Jatisari.</p>
+                    </div>
+                    <div class="agenda-img-box">
+                        <img src="img/gambar14.png" alt="Kampanye Digital">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- SECTION DOKUMENTASI LAPANGAN -->
+    <section id="dokumentasi-visual" class="section-scroll-target">
+        <div class="container">
+            
+            <!-- HEADER SECTION -->
+            <div class="visual-header">
+                <div class="badge-tag-blue">
+                    <span class="badge-dot">•</span>
+                    <span class="badge-text">DOKUMENTASI LAPANGAN</span>
+                </div>
+                <h2 class="visual-title">Catatan Visual Perjalanan Kami</h2>
+            </div>
+
+            <!-- BENTO/GRID ASIMETRIS FOTO -->
+            <div class="visual-grid">
+
+                <!-- FOTO 1: WIDE (FOTO UTAMA BERSAMA WARGA) -->
+                <div class="visual-card card-wide">
+                    <img src="img/gambar15.JPG" alt="Foto Bersama Warga Desa">
+                </div>
+
+                <!-- FOTO 2: PRESENTASI / EDUSASI -->
+                <div class="visual-card card-tall">
+                    <img src="img/gambar16.png" alt="Sosialisasi dan Presentasi Program">
+                </div>
+
+                <!-- FOTO 3: PRAKTIK PEMBUATAN ECO ENZYME -->
+                <div class="visual-card">
+                    <img src="img/gambar17.png" alt="Praktik Pengolahan Sampah Organik">
+                </div>
+
+                <!-- FOTO 4: AKSI GOBAR / KERJA BAKTI -->
+                <div class="visual-card">
+                    <img src="img/gambar18.JPG" alt="Aksi Bersama di Lapangan">
+                </div>
+
+                <!-- FOTO 5: PEMASANGAN PAPAN INFORMASI -->
+                <div class="visual-card">
+                    <img src="img/gambar19.png" alt="Pemasangan Papan Informasi Desa">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- SECTION UMKM MANDIRI DESA -->
+    <section id="umkm-desa" class="section-scroll-target">
+        <div class="container">
+            
+            <!-- HEADER SECTION -->
+            <div class="umkm-header">
+                <div class="badge-tag-blue">
+                    <span class="badge-dot">•</span>
+                    <span class="badge-text">KOMERSIALISASI DESA</span>
+                </div>
+                <h2 class="umkm-title">UMKM Mandiri Desa Jatisari</h2>
+                <p class="umkm-subtitle">
+                    Hasil nyata dari pemberdayaan sirkular ekonomi, mendukung kelangsungan finansial warga secara mandiri melalui penjualan produk bernilai ekonomis tinggi.
+                </p>
+            </div>
+
+            <!-- GRID 3 KARTU PRODUK -->
+            <div class="umkm-grid">
+
+                <!-- KARTU PRODUK 1 (KEYCHAIN TUTUP BOTOL) -->
+                <div class="product-card">
+                    <div class="product-img-box img-contain">
+                        <img src="img/keychain.jpg" alt="Keychain Tutup Botol Bekas">
+                    </div>
+                    <div class="product-body">
+                        <div class="product-head">
+                            <h3>Keychain Daur Ulang</h3>
+                        </div>
+                        <p class="product-desc">
+                            Gantungan kunci unik hasil olahan tutup botol plastik bekas yang meleleh melalui proses pengetrikan dan pencetakan kreatif.
+                        </p>
+                        <a href=# target="_blank" class="btn-wa">PESAN VIA WA</a>
+                    </div>
+                </div>
+
+                <!-- KARTU PRODUK 2 -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="img/ecoenzym.png" alt="Eco Enzyme">
+                    </div>
+                    <div class="product-body">
+                        <div class="product-head">
+                            <h3>Eco Enzyme</h3>
+                        </div>
+                        <p class="product-desc">
+                            Pupuk alami siap pakai hasil dekomposisi daun sisa pertanian terproteksi nutrisi bio-reaktor.
+                        </p>
+                        <a href=# target="_blank" class="btn-wa">PESAN VIA WA</a>
+                    </div>
+                </div>
+
+                <!-- KARTU PRODUK 3 (POT BUNGA BOTOL PLASTIK) -->
+                <div class="product-card">
+                    <div class="product-img-box img-contain">
+                        <img src="img/pot.jpg" alt="Pot Bunga Botol Plastik">
+                    </div>
+                    <div class="product-body">
+                        <div class="product-head">
+                            <h3>Pot Bunga Dari Botol</h3>
+                        </div>
+                        <p class="product-desc">
+                            Pot tanaman hias dari botol plastik bekas 1.5 L yang dilukis motif unik ramah lingkungan hasil kreasi warga.
+                        </p>
+                        <a href=# target="_blank" class="btn-wa">PESAN VIA WA</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- SECTION TIM KKN TEMATIK (AVATAR INISIAL) -->
+    <section id="penggerak-perubahan" class="section-scroll-target">
+        <div class="container">
+            
+            <!-- HEADER SECTION -->
+            <div class="team-header">
+                <div class="badge-tag-blue">
+                    <span class="badge-dot">•</span>
+                    <span class="badge-text">PENGGERAK PERUBAHAN</span>
+                </div>
+                <h2 class="team-title">Tim KKN Tematik 2026</h2>
+            </div>
+
+            <!-- GRID 4 KOLOM KARTU ANGGOTA -->
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="initial-avatar">K</div>
+                    <h3>Khaerudin sidik patoni, S.E., M.M.</h3>
+                    <p class="team-role">Dosen Pembimbing Lapangan</p>
+                </div>
+                <div class="team-card">
+                    <div class="initial-avatar">E</div>
+                    <h3>Eryk Daffa Busala</h3>
+                    <p class="team-role">Ketua KKN Jatisari</p>
+                </div>
+                <div class="team-card">
+                    <div class="initial-avatar">D</div>
+                    <h3>Delfina Widya Purnama</h3>
+                    <p class="team-role">Wakil Ketua KKN Jatisari</p>
+                </div>
+                <div class="team-card">
+                    <div class="initial-avatar">D</div>
+                    <h3>⁠Desta Apriliana</h3>
+                    <p class="team-role">Sekretaris 1 KKN Jatisari</p>
+                </div>
+                <div class="team-card">
+                    <div class="initial-avatar">F</div>
+                    <h3>Famia Restikayanty</h3>
+                    <p class="team-role">Sekretaris 2 KKN Jatisari</p>
+                </div>
+                <div class="team-card">
+                    <div class="initial-avatar">N</div>
+                    <h3>Nazwa Amalia Nur Apriyanti</h3>
+                    <p class="team-role">Bendahara 1 KKN Jatisari</p>
+                </div>
+                <div class="team-card">
+                    <div class="initial-avatar">A</div>
+                    <h3>⁠Alya Azzahra Saelan</h3>
+                    <p class="team-role">Bendahara 2 KKN Jatisari</p>
+                </div>
+                <div class="team-card">
+                    <div class="initial-avatar">F</div>
+                    <h3>Fajar Wisnu Pratama</h3>
+                    <p class="team-role">Divisi Acara 1 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">R</div>
+                    <h3>Riman Maulana</h3>
+                    <p class="team-role">Divisi Acara 2 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">N</div>
+                    <h3>Nirwana Eka Salsabila</h3>
+                    <p class="team-role">Divisi Acara 3 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">R</div>
+                    <h3>Rekha Revana Cleisya</h3>
+                    <p class="team-role">Divisi Acara 4 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">A</div>
+                    <h3>Auliya Asyipa</h3>
+                    <p class="team-role">Divisi PDD 1 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">D</div>
+                    <h3>⁠Dini Rosdiyani</h3>
+                    <p class="team-role">Divisi PDD 2 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">J</div>
+                    <h3>Junico hotasi sitohang</h3>
+                    <p class="team-role">Divisi PDD 3 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">D</div>
+                    <h3>Dila Adijah</h3>
+                    <p class="team-role">Divisi Humas 1 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">R</div>
+                    <h3>Rahmat Wahyu Hidayat</h3>
+                    <p class="team-role">Divisi Humas 2 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">S</div>
+                    <h3>Stevia Kelana Nusantari</h3>
+                    <p class="team-role">Divisi Humas 3 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">M</div>
+                    <h3>⁠Muhammad Iqbal Dinda Pratama</h3>
+                    <p class="team-role">Divisi Konsumsi 1 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">F</div>
+                    <h3>Faqih Ilyasa</h3>
+                    <p class="team-role">Divisi Konsumsi 2 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">R</div>
+                    <h3>Rifda Alawiyah</h3>
+                    <p class="team-role">Divisi Konsumsi 3 KKN Jatisari</p>
+                </div> 
+
+                <div class="team-card">
+                    <div class="initial-avatar">I</div>
+                    <h3>⁠Ignatius Yovanda Sindhu Nugroho</h3>
+                    <p class="team-role">Divisi Logistik 1 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">N</div>
+                    <h3>Najwa Fauziyyah Habibah</h3>
+                    <p class="team-role">Divisi Logistik 2 KKN Jatisari</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="initial-avatar">R</div>
+                    <h3>⁠Rifqi Fajari Fatihul Ihsan</h3>
+                    <p class="team-role">Divisi Logistik 3 KKN Jatisari</p>
+                </div> 
             </div>
         </div>
     </section>
 
-    <main class="container">
-        <h2 class="section-title">Pencapaian Program</h2>
-        <p class="section-subtitle">Ringkasan singkat hasil pengabdian tim selama KKN</p>
-        
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-stat-number">5</div>
-                <p>Program Kerja Terlaksana</p>
-            </div>
-            <div class="card">
-                <div class="card-stat-number">22</div>
-                <p>Anggota Mahasiswa</p>
-            </div>
-            <div class="card">
-                <div class="card-stat-number">30 Hari</div>
-                <p>Masa Pengabdian</p>
-            </div>
-            <div class="card">
-                <div class="card-stat-number">31</div>
-                <p>Pohon Telah Di Tanam</p>
+    <!-- SECTION TESTIMONI KEPALA DESA -->
+    <section id="testimoni-kades" class="section-scroll-target">
+        <div class="quote-banner-overlay">
+            <div class="quote-container">
+                <div class="quote-icon">❝</div>
+                <p id="typed-quote" class="quote-text"></p>
+                <div class="quote-author">
+                    <h3>H. Casmita</h3>
+                    <p>Kepala Desa Jatisari</p>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+    <!-- SECTION HUBUNGI KAMI / KOLABORASI (TANPA FORM) -->
+    <section id="kolaborasi-lingkungan" class="section-scroll-target">
+        <div class="container">
+            
+            <div class="kolaborasi-wrapper">
+                <!-- HEADER & BADGE -->
+                <div class="badge-tag-blue">
+                    <span class="badge-dot">•</span>
+                    <span class="badge-text">HUBUNGI KAMI</span>
+                </div>
+                <h2 class="kolaborasi-title">Mari Berkolaborasi Untuk Lingkungan</h2>
+                <p class="kolaborasi-subtitle">
+                    Ingin berkontribusi, mendonasikan alat komposter, atau mengajukan kerja sama riset? Silakan hubungi sekretariat KKN Tematik Desa Jatisari.
+                </p>
 
-<!-- KONTEN FOOTER KAMU -->
-    <footer class="footer">
-        <p>&copy; 2026 Tim KKN Desa Sukamaju</p>
+                <!-- DETAIL KONTAK -->
+                <div class="kolaborasi-contact-list">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span class="contact-text">Desa Jatisari, Jawa Barat, Indonesia</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <a href="#" target="_blank" class="contact-text"></a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <a href="mailto:kknjatisari26@gmail.com" class="contact-text">kknjatisari26@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- FOTO BANNER DESA -->
+                <div class="kolaborasi-banner-box">
+                    <img src="img/background2.jpg" alt="Pemandangan Desa Jatisari">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER UTAMA -->
+    <footer class="site-footer">
+        <div class="container">
+            
+            <!-- BARIS ATAS FOOTER -->
+            <div class="footer-top">
+                
+                <!-- BRAND & DESKRIPSI (KIRI) -->
+                <div class="footer-brand-box">
+                    <a href="index.html" class="footer-logo">
+                        <img src="img/logo1.jpeg" class="logo-box" alt="Logo KKN">
+                        <span class="logo-text">KKN JATISARI</span>
+                    </a>
+                    <p class="footer-desc">
+                        Sinergi nyata mahasiswa dan warga mewujudkan kemandirian sirkular pengelolaan sampah berkelanjutan di Desa Jatisari.
+                    </p>
+                </div>
+
+                <!-- NAVIGASI MENU (KANAN) -->
+                <div class="footer-nav-group">
+                    
+                    <!-- KOLOM 1: TAUTAN PINTAR -->
+                    <div class="footer-nav-col">
+                        <h4 class="footer-col-title">TAUTAN PINTAR</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html#top-page">Beranda</a></li>
+                            <li><a href="index.html#alur-transformasi">Tentang Kami</a></li>
+                            <li><a href="index.html#agenda-pemberdayaan">Program Kerja</a></li>
+                            <li><a href="index.html#umkm-desa">Galeri UMKM</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- KOLOM 2: SOSIAL MEDIA -->
+                    <div class="footer-nav-col">
+                        <h4 class="footer-col-title">SOSIAL MEDIA</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://www.instagram.com/kknjatisari2026/" target="_blank">Instagram</a></li>
+                            <li><a href="#" target="_blank">YouTube</a></li>
+                            <li><a href="https://www.tiktok.com/@kknubpjatisari2026_" target="_blank">TikTok</a></li>
+                            <li><a href="#" target="_blank">Facebook</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <!-- BARIS BAWAH FOOTER (COPYRIGHT & KAMPUS) -->
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; 2026 KKN Tematik Desa Jatisari. Seluruh Hak Cipta Dilindungi.</p>
+                <p class="collab-text">Universitas Buana Perjuangan x Desa Jatisari</p>
+            </div>
+
+        </div>
     </footer>
-
-    <!-- TAMBAHKAN BARIS INI DI SINI -->
     <script src="script.js"></script>
 
 </body>

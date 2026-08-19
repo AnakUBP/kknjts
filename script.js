@@ -1,30 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ------------------------------------------
-       1. ANIMASI ANGKA BERHITUNG (COUNTER UP)
-       ------------------------------------------ */
+    ANIMASI ANGKA BERHITUNG (COUNTER UP IMPROVED)
+    ------------------------------------------ */
     const statNumbers = document.querySelectorAll('.card-stat-number');
     let hasAnimated = false;
 
-    // Fungsi untuk menjalankan animasi hitung angka
     const animateCounters = () => {
         statNumbers.forEach(counter => {
             const textContent = counter.innerText.trim();
-            // Ekstrak angka saja dari teks (misal: "30 Hari" -> 30, "5" -> 5)
-            const target = parseInt(textContent.match(/\d+/)[0], 10);
-            const suffix = textContent.replace(/\d+/g, '').trim(); // Mengambil teks tambahan jika ada (seperti "Hari")
+            
+            // Ekstrak angka pertama yang ditemukan
+            const matchNumber = textContent.match(/\d+/);
+            if (!matchNumber) return;
+
+            const target = parseInt(matchNumber[0], 10);
+            
+            // Ambil karakter sebelum & sesudah angka (misal "+", " kg", " Minggu")
+            const prefix = textContent.substring(0, matchNumber.index);
+            const suffix = textContent.substring(matchNumber.index + matchNumber[0].length);
 
             let count = 0;
-            const duration = 2000; // Durasi animasi dalam milidetik (2 detik)
-            const increment = Math.ceil(target / (duration / 16)); // ~60fps
+            const duration = 2000; // 2 detik
+            const increment = Math.ceil(target / (duration / 16));
 
             const updateCount = () => {
                 count += increment;
                 if (count < target) {
-                    counter.innerText = count + (suffix ? ' ' + suffix : '');
+                    counter.innerText = `${prefix}${count}${suffix}`;
                     requestAnimationFrame(updateCount);
                 } else {
-                    counter.innerText = target + (suffix ? ' ' + suffix : '');
+                    counter.innerText = `${prefix}${target}${suffix}`;
                 }
             };
 
@@ -32,17 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Jalankan animasi saat elemen kartu terlihat di layar (Intersection Observer)
-    const observerTarget = document.querySelector('.grid-3');
+    // Intersection Observer
+    const observerTarget = document.querySelector('.capaian-grid') || document.querySelector('.grid-3');
     if (observerTarget) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !hasAnimated) {
                     animateCounters();
-                    hasAnimated = true; // Agar animasi hanya berjalan sekali
+                    hasAnimated = true;
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.2 });
 
         observer.observe(observerTarget);
     }
@@ -53,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
        ------------------------------------------ */
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const originalText = "Membangun Desa, Mengabdi Untuk Masyarakat";
+        const originalText = "Optimalisasi Pengelolaan Sampah Berbasis Edukasi, Teknologi, dan Pemberdayaan Masyarakat";
         heroTitle.innerText = ''; // Kosongkan teks awal
         let charIndex = 0;
 
@@ -69,19 +75,19 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(typeEffect, 300);
     }
 
-
     /* ------------------------------------------
-       3. EFEK NAVBAR PADA SCROLL
-       ------------------------------------------ */
-    const navbar = document.querySelector('.navbar');
+    3. LOGIKA HIDE SCROLL TOAST SAAT DI-SCROLL
+    ------------------------------------------ */
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('navbar-scrolled');
-        } else {
-            navbar.classList.remove('navbar-scrolled');
+        const scrollToast = document.getElementById('scroll-toast');
+        if (scrollToast) {
+            if (window.scrollY > 50) {
+                scrollToast.classList.add('hide');
+            } else {
+                scrollToast.classList.remove('hide');
+            }
         }
     });
-
 
     /* ------------------------------------------
        4. ANIMASI FADE-IN KARTU SAAT DI-SCROLL
@@ -149,4 +155,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
     });
+
+    /* ------------------------------------------
+   ANIMASI MENGETIK (TYPEWRITER EFFECT) TESTIMONI
+   ------------------------------------------ */
+    const quoteElement = document.getElementById('typed-quote');
+
+    if (quoteElement) {
+        const quoteText = '"Kehadiran adik-adik mahasiswa KKN membawa perubahan nyata bagi Desa Jatisari. Warga kami kini tidak lagi membakar sampah secara liar, melainkan paham cara mengolahnya demi kelestarian alam dan tambahan ekonomi."';
+        
+        quoteElement.innerText = ''; // Kosongkan teks awal
+        let charIndex = 0;
+        let isTypingStarted = false;
+
+        const typeEffect = () => {
+            if (charIndex < quoteText.length) {
+                quoteElement.innerText += quoteText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeEffect, 35); // Kecepatan mengetik (35ms per karakter)
+            }
+        };
+
+        // Jalankan efek saat section terlihat di layar
+        const quoteSection = document.getElementById('testimoni-kades');
+        if (quoteSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !isTypingStarted) {
+                        isTypingStarted = true;
+                        setTimeout(typeEffect, 300); // Delay singkat sebelum mulai
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(quoteSection);
+        }
+    }
 });
