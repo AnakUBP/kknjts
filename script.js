@@ -191,30 +191,42 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(quoteSection);
         }
     }
-    // 1. Ambil semua section yang memiliki atribut ID
+    /* ------------------------------------------
+   LOGIKA AUTOMATIC ACTIVE NAV-LINK ON SCROLL (DENGAN PENGECUALIAN GABUNGAN)
+   ------------------------------------------ */
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-menu .nav-link');
 
-    // Jika tidak ada section di halaman ini (misal di halaman lain), tidak perlu jalankan observer
     if (sections.length === 0) return;
 
-    // 2. Opsi untuk IntersectionObserver (mendeteksi saat section fokus di layar)
+    // Opsi deteksi fokus di tengah layar
     const observerOptions = {
         root: null,
-        rootMargin: '-20% 0px -45% 0px', // Fokus area deteksi di tengah layar
+        rootMargin: '-20% 0px -45% 0px',
         threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const currentId = entry.target.getAttribute('id');
+                let currentId = entry.target.getAttribute('id');
 
-                // Hapus kelas 'active' dari seluruh nav-link
+                // 1. PENGECUALIAN GABUNGAN: TENTANG KAMI
+                // 'metodologi-gerakan' & 'laporan-capaian' dialihkan ke 'alur-transformasi'
+                if (currentId === 'metodologi-gerakan' || currentId === 'laporan-capaian') {
+                    currentId = 'alur-transformasi';
+                }
+
+                // 2. PENGECUALIAN GABUNGAN: KONTAK KAMI
+                // 'testimoni-kades' dialihkan ke 'kolaborasi-lingkungan'
+                if (currentId === 'testimoni-kades') {
+                    currentId = 'kolaborasi-lingkungan';
+                }
+
+                // Hapus kelas 'active' dari semua link
                 navLinks.forEach(link => link.classList.remove('active'));
 
-                // Cari link yang atribut href-nya mengarah ke ID section saat ini
-                // Mendukung pencocokan: "index.html#id" maupun "#id"
+                // Cari dan aktifkan link yang sesuai dengan target ID
                 const activeLink = Array.from(navLinks).find(link => {
                     const href = link.getAttribute('href');
                     return href && (href.endsWith(`#${currentId}`) || href === `#${currentId}`);
@@ -227,6 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // 3. Daftarkan setiap section ke observer
+    // Daftarkan semua section ke observer
     sections.forEach(section => observer.observe(section));
 });
